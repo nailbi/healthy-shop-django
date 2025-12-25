@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Избранное</title>
+    <link rel="stylesheet" href="{% static 'shop/style.css' %}">
+</head>
+<body>
+
+<header>
+    <a href="/">Товары</a>
+    <a href="/cart/">Корзина</a>
+</header>
+
+<div class="list">
+    {% for item in items %}
+    <div class="list-item">
+        {{ item.product.name }}
+    </div>
+    {% empty %}
+    <p>Избранных товаров нет</p>
+    {% endfor %}
+</div>
+
+</body>
+</html>
